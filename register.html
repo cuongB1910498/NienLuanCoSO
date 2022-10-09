@@ -13,139 +13,158 @@
  
      <!-- font anwsome -->
      <script src="https://kit.fontawesome.com/5644bf12f0.js" crossorigin="anonymous"></script>
+	 <!-- CSS -->
+	 <style>
+        .body{
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        .box{
+            
+            height: auto;
+            background-color: rgb(229, 247, 253);
+        }
+
+        h1{
+            margin-top: 100px;
+			margin-bottom: 50px;
+            text-align: center;
+            color:rgb(0, 0, 0);
+        }
+       
+        input[type="text"],input[type="password"]{
+            
+            display: block;
+            border: 2px solid rgba(20, 98, 244, 0.999);
+            outline: none;
+            border-radius: 10px;
+            transition: 300ms;
+        }
+
+        .box input[type="text"]:focus,.box input[type="password"]:focus{
+            border-color:greenyellow; 
+        }
+    
+        .from-control input{
+            width: 90%;
+            height: 50px;
+        }
+
+        label.error{
+            font-weight: 400;
+            color: red;
+        }
+		label{
+			font-weight: 500;
+			line-height: 30px;
+		}
+    </style>
     
 </head>
 <body>
-    <div class="container">
-		<div class="row">
-			<div class="col-sm-8 offset-sm-2">
-				<div class="card">
-					<div class="card-header">
-						<h3>Đăng ký thành viên</h3>
-					</div>
-					<div class="card-body mt-3">
-						<form id="signupForm" method="post" class="form-horizontal" action="#">
+    
+	<div class="container row">
+        <div class="box col offset-3">
+            <h1>NEW MEMBER</h1>
+            <form class="form-horizontal" action="#" method="post" id="register-form">
+                
+				<div class="form-group mb-4 row">
+                    <label class="col-lg-2 col-md-3 col-sm-12 col-12 offset-1" for="fullname">Full Name: </label>
+                    <div class="from-control col-lg-9 col-md-9 col-sm-12 col-12">
+                        <input class="" type="text" name="fullname" id="fullname" placeholder="Full name..." >
+                        <label class="error"></label>
+                    </div>
+                </div>
 
-							<div class="form-group row mt-3">
-								<label class="col-sm-4 col-form-label" for="firstname">Tên của bạn</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Tên của bạn" />
-								</div>
-							</div>
+                <div class="form-group mb-4 row">
+                    <label class="col-lg-2 col-md-3 col-sm-12 col-12 offset-1" for="usn">Username: </label>
+                    <div class="from-control col-lg-9 col-md-9 col-sm-12 col-12">
+                        <input class="" type="text" name="usn" id="usn" placeholder="Username..." >
+                        <label class="error"></label>
+                    </div>
+                </div>
+                
+                <div class="form-group mb-4 row">
+                    <label class="col-lg-2 col-md-3 col-sm-12 col-12 offset-1" for="pwd">Password: </label>
+                    <div class="from-control col-lg-9 col-md-9 col-sm-12 col-12">
+                        <input class="" type="password" name="pwd" id="pwd" placeholder="Password..." >
+                        <label class="error"></label>
+                    </div>
+                </div>
 
-							<div class="form-group row mt-3">
-								<label class="col-sm-4 col-form-label" for="lastname">Họ của bạn</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" id="lastname" name="lastname" placeholder="Họ của bạn" />
-								</div>
-							</div>
+				<div class="form-group mb-4 row">
+                    <label class="col-lg-2 col-md-3 col-sm-12 col-12 offset-1" for="c-pwd">Confirm Password: </label>
+                    <div class="from-control col-lg-9 col-md-9 col-sm-12 col-12">
+                        <input class="" type="password" name="c_pwd" id="c_pwd" placeholder="ConfirmPassword..." >
+                        <label class="error"></label>
+                    </div>
+                </div>
 
-							<div class="form-group row mt-3">
-								<label class="col-sm-4 col-form-label" for="username">Tên đăng nhập</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" id="username" name="username" placeholder="Tên đăng nhập" />
-								</div>
-							</div>
+				<div class="form-group mb-4 row">
+                    <label class="col-lg-2 col-md-3 col-sm-12 col-12 offset-1" for="email">Email: </label>
+                    <div class="from-control col-lg-9 col-md-9 col-sm-12 col-12">
+                        <input class="" type="text" name="email" id="email" placeholder="Email..." >
+                        <label class="error"></label>
+                    </div>
+                </div>
 
-							<div class="form-group row mt-3">
-								<label class="col-sm-4 col-form-label" for="email">Hộp thư điện tử</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" id="email" name="email" placeholder="Hộp thư điện tử" />
-								</div>
-							</div>
-
-							<div class="form-group row mt-3">
-								<label class="col-sm-4 col-form-label" for="password">Mật khẩu</label>
-								<div class="col-sm-5">
-									<input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu" />
-								</div>
-							</div>
-
-							<div class="form-group row mt-3">
-								<label class="col-sm-4 col-form-label" for="confirm_password">Nhập lại mật khẩu</label>
-								<div class="col-sm-5">
-									<input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" />
-								</div>
-							</div>
-
-							<div class="form-group form-check mt-3">
-								<div class="col-sm-5 offset-sm-4">
-									<input class="form-check-input" type="checkbox" id="agree" name="agree" value="agree" />
-									<label class="form-check-label" for="agree">Đồng ý các quy định của chúng tôi</label>
-								</div>
-							</div>
-
-							<div class="row mt-3">
-								<div class="col-sm-5 offset-sm-4">
-									<button type="submit" class="btn btn-primary" name="signup" value="Sign up">Đăng ký</button>
-								</div>
-							</div>
-
-						</form>
+				<div class="form-group form-check mb-4 row">
+					<div class="col offset-3">
+						<label for="agree">Accept all.</label>
+						<input type="checkbox" name="agree" id="agree">
+						
+						
 					</div>
 				</div>
-			</div> <!-- Cột nội dung -->
-		</div> <!-- Dòng nội dung -->
-	</div>
+
+                <div class="form-group mb-4 row">
+                    <div class="col-5"></div>
+                    <div class="col">
+                        <button class="btn btn-primary col" type="submit">SUBMIT</button>
+                    </div>
+                    <div class="col-5"></div>
+                    
+                    
+                </div>
+
+                <div class="mb-3 row ">
+                    <div class="col-lg-7 col-md-9 col-sm-12 col-12 offset-1">Your're member?</div>
+                    <div class="col-lg col-md col-sm col"><a href="" style="text-decoration:none">Login here...</a></div>
+					<label class="error"></label>
+                </div>
+            </form>
+        </div>
+   </div> 
+
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 
-    <script type="text/javascript">
-		$.validator.setDefaults({
-			submitHandler: function () { alert("submitted!");}
-		});
-		$(document).ready(function () {
-			$("#signupForm").validate({
-				rules: {
-					firstname: "required",
-					lastname: "required",
-					username: { required: true, minlength: 2},
-					password: { required: true, minlength: 5},
-					confirm_password: { required: true, minlength: 5, equalTo: "#password"},
-					email: { required: true, email: true},
-					agree: "required"
+   <script>
+		$(document).ready(function (){
+			$("#register-form").validate({
+				rules:{
+					fullname: {required: true, maxlength:50},
+					usn: {required:true, minlength:6},
+					pwd: {required:true, minlength:6},
+					c_pwd: {required:true, minlength:6, equalTo: "#pwd"},
+					email: {email: true, required: true},
+					agree: {required:true}
 				},
-				messages: {
-					firstname: "bạn chưa nhập vào họ của bạn",
-					lastname: "bạn chưa nhập vào tên của bạn",
-					username: {
-						required: "Bạn chưa nhập vào tên đăng nhập",
-						minlength: "Tên đăng nhập phải có ít nhất 2 ký tự"
-					},
-					password: {
-						required: "Bạn chưa nhập mật khẩu",
-						minlength: "Mật khẩu phải có ít nhất 5 ký tự"
-					},
-					confirm_password: {
-						required: "Bạn chưa nhập mật khẩu",
-						minlength: "Mật khẩu phải có ít nhất 5 ký tự",
-						equalTo: "Mật khẩu không trùng khớp với mật khẩu đã nhập"
-					},
-					email: "Hộp thư điên tử không hợp lệ",
-					agree: "Bạn phải đồng ý với các qui định của chúng tôi"
-				},
-				ErrorElement: "div",
-				ErrorPlacement: function (error, element) {
-					error.addClass("invalid-feedback");
-					if(element.prop("type") === "checkbox") {
-						error.inserAfter(element.siblings("label"));
-					}else {
-						error.inserAfter(element);
-					}
-				},
-				highlight: function (element, errorClass, validClass) {
-					$(element).addClass("is-invalid").removeClass("is-valid");
-				},
-				unhighlight: function (element, errorClass, validClass) {
-					$(element).addClass("is-valid").removeClass("is-invalid");
+				messages:{
+					fullname: {required:"Name was not null", maxlength:"Name so long!"},
+					usn: {required:"Username was not null", minlength:"Username leat 6 char"},
+					pwd: {required:"Password was not null", minlength:"Password leat 6 char"},
+					c_pwd: {required:"ComfirmPassword was not null", minlength:"ConfirmPassword leat 6 char", equalTo:"Incorect!"},
+					email: {required:"Email was not null", email:"check your mail"},
+					agree: {required:"You must accept all"}
+
 				}
-			});
+			})
 		});
-
-
-		
-	</script>
+   </script>
 
 </body>
 </html>
